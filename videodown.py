@@ -21,16 +21,19 @@ def download(url):
         print(">" + Fore.LIGHTGREEN_EX + " Download complete!")
 
 
+def main():
+    figlet = pyfiglet.figlet_format("YDL Video")
+    print(Fore.LIGHTBLUE_EX + figlet)
+    print("Youtube, niconico, etc...\n" + Fore.RESET)
+    url = input("> Enter url : ")
+    while not url:
+        print(">" + Fore.RED + " Not entered" + Fore.RESET)
+        url = input("> Enter url : ")
+    download(url)
+
 if __name__ == "__main__":
     try:
-        figlet = pyfiglet.figlet_format("YDL Video")
-        print(Fore.LIGHTBLUE_EX + figlet)
-        print("Youtube, niconico, etc...\n" + Fore.RESET)
-        url = input("> Enter url : ")
-        while not url:
-            print(">" + Fore.RED + " Not entered" + Fore.RESET)
-            url = input("> Enter url : ")
-        download(url)
+        main()
     except KeyboardInterrupt:
         print("\n>" + Fore.GREEN + " Exit program")
         sys.exit()
